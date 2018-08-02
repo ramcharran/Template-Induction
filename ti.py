@@ -71,6 +71,7 @@ def clustering():
         cur.execute("select id,subject from csmail where domain ='"+i+"'")
         new_subj = cur.fetchall()
         dom_subj_count = len(new_subj)
+        temp = []
         #print(dom_subj_count)
         for k in regularized_subj[i]:
             match_count = 0
@@ -87,7 +88,9 @@ def clustering():
                 #print(set(k).difference(temp_subj),i)
                 if len(set(k).difference(temp_subj))<2:
                     match_count +=1
-                    clusters[i].append((j[0],match_count))
+                    temp.append(j[0])
+            clusters[i].append(temp)
+            temp = []
         c+=1
 
 get_domain_names()
@@ -98,21 +101,21 @@ clustering()
 #print(regularized_subj)\
 temp_list =[]
 
-for i in domain_names:
-    temp=0
-    flag =0
-    for j in clusters[i]:
-        if j[1] > temp:
-            temp = j[1]
-            temp_list.append(j[0])
-        else:
-            temp =0
-            final_clusters[i].append(temp_list)
-            flag =1
-            temp_list = []
-    if flag == 0:
-        final_clusters[i].append(temp_list)
-        temp_list = []
+#for i in domain_names:
+#    temp=0
+#    flag =0
+#    for j in clusters[i]:
+#        if j[1] > temp:
+#            temp = j[1]
+#            temp_list.append(j[0])
+#        else:
+#            temp =0
+#            final_clusters[i].append(temp_list)
+#            flag =1
+#            temp_list = []
+#    if flag == 0:
+#        final_clusters[i].append(temp_list)
+#        temp_list = []
 
 
-print(final_clusters)
+print(clusters['wufoo.com'])
