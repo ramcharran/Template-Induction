@@ -20,3 +20,7 @@ Results from both domains:
 ![screenshot 18](https://user-images.githubusercontent.com/22301958/43565727-505d7e8a-95f1-11e8-8fcc-e940623e5421.png)
 
 There are 8 clusters formed for the 16 emails from orders.staples.com while only a single cluster is formed for all the 95 emails from  wufoo.com.
+
+# References
+
+Potti, N., Wendt, J. B., Zhao, Q., Tata, S., & Najork, M. (2018). Hidden in Plain Sight. Proceedings of the 2018 World Wide Web Conference on World Wide Web - WWW 18. doi:10.1145/3178876.3186167
